@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact &amp; Book a Demo | FWM Software</title>
+<meta name="description" content="Book a Lien Writer demo or reach FWM Software — support@fwmsoftware.com, (916) 237-7046, 1024 Iron Point Rd, Folsom, CA 95630.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div style="background:#0E3E44;color:#FAF5EC;text-align:center;padding:8px 16px;font-size:14px">Preview build — not our live site yet. Found something? <a href="contact.html" style="color:#F0654A">Tell us</a>.</div>
+
+<header class="site-header">
+  <div class="shell header-inner">
+    <a class="lockup" href="index.html">
+      <span class="lockup-name">Lien Writer</span>
+      <span class="lockup-by">by FWM Software</span>
+    </a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="index.html">Home</a>
+      <a href="versions.html">Versions</a>
+      <a href="contact.html" aria-current="page">Contact</a>
+      <a href="https://app.lienwriter.com">Log in</a>
+      <a class="btn btn-accent" href="contact.html">Book a Demo</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-intro">
+    <div class="shell">
+      <h1>Talk to a person, not a queue</h1>
+      <p>FWM Software is family-run, and the people who build Lien Writer are the people who answer. Book a demo, ask a lien-law-adjacent question, or just call.</p>
+    </div>
+  </section>
+
+  <section class="section-tight">
+    <div class="shell grid-2">
+
+      <!-- Demo form -->
+      <form class="card" id="demo-form">
+        <h2 style="font-size:var(--text-2xl);font-weight:600">Book a demo</h2>
+        <p class="form-lede" style="text-align:left;margin:var(--space-2) 0 var(--space-5)">Twenty minutes, your paperwork, a real person from the family that builds it. Tell us a little about your work and we&rsquo;ll be in touch within one business day.</p>
+        <div class="form-grid">
+          <div class="field">
+            <label for="demo-name">Name</label>
+            <input id="demo-name" name="name" type="text" autocomplete="name" required>
+          </div>
+          <div class="field">
+            <label for="demo-company">Company</label>
+            <input id="demo-company" name="company" type="text" autocomplete="organization" required>
+          </div>
+        </div>
+        <div class="field">
+          <label for="demo-email">Work email</label>
+          <input id="demo-email" name="email" type="email" autocomplete="email" required>
+        </div>
+        <div class="field">
+          <label for="demo-message">What do you process? <span style="font-weight:400;color:var(--text-muted)">(optional)</span></label>
+          <textarea id="demo-message" name="message" placeholder="e.g. About 200 preliminary notices a month in CA and NV, plus releases."></textarea>
+        </div>
+        <button class="btn btn-primary btn-lg" type="submit" style="width:100%">Request a Demo</button>
+        <p class="form-note" hidden>Your email app should open with the details filled in — just press Send.</p>
+      </form>
+
+      <!-- Contact details -->
+      <div class="card">
+        <h2 style="font-size:var(--text-2xl);font-weight:600">Reach us directly</h2>
+        <ul class="contact-list">
+          <li>
+            <span class="contact-label">Email</span>
+            <span class="contact-value"><a href="mailto:support@fwmsoftware.com">support@fwmsoftware.com</a></span>
+          </li>
+          <li>
+            <span class="contact-label">Phone</span>
+            <span class="contact-value"><a href="tel:+19162377046">(916) 237-7046</a></span>
+          </li>
+          <li>
+            <span class="contact-label">Office</span>
+            <span class="contact-value">1024 Iron Point Rd, Folsom, CA 95630</span>
+          </li>
+          <li>
+            <span class="contact-label">Existing customers</span>
+            <span class="contact-value">Support questions go to the same email and phone — no separate queue, no tiers.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell footer-inner">
+    <div>
+      <div class="lockup-name">Lien Writer</div>
+      <div class="footer-line">&copy; 2026 FWM Software &middot; Family-run since 1994</div>
+    </div>
+    <address>
+      1024 Iron Point Rd, Folsom, CA 95630<br>
+      <a href="tel:+19162377046">(916) 237-7046</a> &middot; <a href="mailto:support@fwmsoftware.com">support@fwmsoftware.com</a>
+    </address>
+  </div>
+</footer>
+
+<script>
+document.getElementById('demo-form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var f = e.target;
+  var name = f.name.value.trim();
+  var company = f.company.value.trim();
+  var email = f.email.value.trim();
+  var message = f.message.value.trim();
+  var subject = 'Demo request — ' + name + (company ? ' at ' + company : '');
+  var body = 'Name: ' + name + '\nCompany: ' + company + '\nWork email: ' + email +
+    (message ? '\n\n' + message : '') +
+    '\n\nSent from the fwmsoftware.com contact page.';
+  window.location.href = 'mailto:support@fwmsoftware.com?subject=' +
+    encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  f.querySelector('.form-note').hidden = false;
+});
+</script>
+
+</body>
+</html>
